@@ -3,6 +3,7 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=4")
 vim.cmd("set softtabstop=4")
 vim.cmd("set shiftwidth=4")
+vim.cmd("set nohlsearch")
 vim.g.mapleader = " "
 
 vim.cmd("syntax on")
@@ -22,6 +23,27 @@ local builtin = require("telescope.builtin")
 vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 -- live_grep requires 'ripgrep', via e.g. 'sudo pacman -Syu ripgrep'
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+
+local config = require("nvim-treesitter.configs")
+
+config.setup(
+    {
+        ensure_installed = {
+            "c",
+            "html",
+            "javascript",
+            "lua",
+            "python",
+            "vim",
+        },
+        highlight = {
+            enable = true,
+        },
+        indent = {
+            enable = true,
+        },
+    }
+)
 
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
