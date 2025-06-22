@@ -7,18 +7,19 @@ return {
 	  opts = {
 		-- add any opts here
         provider = "openai",
-            providers = {
-            openai = {
-                endpoint = "https://api.openai.com/v1",
-                model = "gpt-4.1",
-                api_version = "2024-10-21",
-                timeout = 30000,
-                disable_tools = true,
-                extra_request_body = {
-                    temperature = 0,
-                    max_tokens = 4096,
-                },
+        mode = "legacy",
+        providers = {
+          openai = {
+            endpoint = "https://api.openai.com/v1",
+            model = "gpt-4.1",
+            api_version = "2024-10-21",
+            timeout = 30000,
+            disable_tools = true,
+            extra_request_body = {
+              temperature = 0,
+              max_tokens = 4096,
             },
+          },
         },
 	  },
 	  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
