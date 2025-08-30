@@ -83,4 +83,9 @@ return {
             "MunifTanjim/nui.nvim",
         },
     },
+    {
+        "tpope/vim-dadbod",
+        name = "vim-dadbod",
+        priority = 1000,
+    },
 }
