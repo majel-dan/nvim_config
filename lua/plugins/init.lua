@@ -104,4 +104,16 @@ return {
             -- Your DBUI confiuration
             vim.g.db_ui_use_nerd_fonts = 1
         end,
+    {
+        "neovim/nvim-lspconfig",
+        name = "nvim-lspconfig",
+    },
+    {
+        "williamboman/mason-lspconfig.nvim",
+        name = "mason-lspconfig",
+    },
+    {
+        "williamboman/mason.nvim",
+        name = "mason",
+    },
 }

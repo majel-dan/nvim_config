@@ -59,3 +59,10 @@ config.setup(
 -- COLORSCHEME
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
+
+
+-- .cypher support
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = { "cypher_ls" },
+}
