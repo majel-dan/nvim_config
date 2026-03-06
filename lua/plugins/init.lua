@@ -11,13 +11,17 @@ return {
         providers = {
           openai = {
             endpoint = "https://api.openai.com/v1",
-            model = "gpt-4.1",
-            api_version = "2024-10-21",
+            -- model = "gpt-4.1-mini",
+            model = "gpt-5.1",
+            -- api_version = "gpt-4.1-2025-04-14",
+            api_version = "gpt-5.1-2025-11-13",
             timeout = 30000,
-            disable_tools = true,
+            -- disable_tools = true,
+            disable_tools = false,
             extra_request_body = {
               temperature = 0,
-              max_tokens = 4096,
+              -- max_tokens = 32768,
+              max_completion_tokens = 32768,
             },
           },
         },
