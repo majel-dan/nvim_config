@@ -34,26 +34,15 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set("n", "<leader>n", ":Neotree filesystem reveal left<CR>", {})
 
 
--- TREESITTER
-local config = require("nvim-treesitter.config")
-config.setup(
-    {
-        ensure_installed = {
-            "c",
-            "html",
-            "javascript",
-            "lua",
-            "python",
-            "vim",
-        },
-        highlight = {
-            enable = true,
-        },
-        indent = {
-            enable = true,
-        },
-    }
-)
+-- Treesitter no longer activates itself automatically. Do so here
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "python", "lua", "javascript", "html", "c", "vim" },
+    callback = function(args)
+        if not vim.treesitter.highlighter.active[args.buf] then
+            pcall(vim.treesitter.start, args.buf)
+        end
+    end,
+})
 
 
 -- COLORSCHEME
