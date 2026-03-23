@@ -18,6 +18,13 @@ vim.cmd("nmap <C-x><Right> :bn<CR>")
 vim.cmd("nmap <C-x><Left> :bp<CR>")
 vim.cmd("map <leader>q :bp<bar>sp<bar>bn<bar>bd<CR>")
 
+vim.g.python_indent = {
+    open_paren = "shiftwidth()",
+    nested_paren = "shiftwidth()",
+    continue = "shiftwidth()",
+    closed_paren_align_last_line = false,
+}
+
 
 -- LAZY PACKAGE MANAGER
 require("config.lazy")
@@ -51,7 +58,7 @@ vim.cmd.colorscheme "catppuccin"
 
 
 -- .cypher support
-require("mason").setup()
-require("mason-lspconfig").setup {
-    ensure_installed = { "cypher_ls" },
-}
+-- require("mason").setup()
+-- require("mason-lspconfig").setup {
+--     ensure_installed = { "cypher_ls" },
+-- }
